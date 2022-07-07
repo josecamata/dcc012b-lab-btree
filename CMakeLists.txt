@@ -4,7 +4,6 @@ project(btree VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-#
-add_executable(btree test1.cpp)
+add_executable(btree main.cpp)
 
 

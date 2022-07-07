@@ -21,14 +21,14 @@ Use essa funcionalidade para fazer testes representativos.
 
 ## Por onde começar:
 
-- Veja o [capitulo 18 do livro do Cormen](docs/cap18_btree.pdf). Considere os pseudocódigos disponíveis lá. 
+- Veja o [capitulo 18 do livro do Cormen](docs/cap18-btree.pdf). Considere os pseudocódigos disponíveis lá. 
 - Implemente a TAD no arquivo btree.h. 
 - No arquivo main.cpp há linhas comentadas que devem ser removidas a medida que a implementação avança. Implemente primeiro o insert e depois descomente essa parte na main. Faça o mesmo para as próximas etapas.
 - A main deve estar totalmente descomentada na submissão final.
 
 
 ## Minhas Observações:
- * escreva aqui suas observações sobre o estudo comparativo*
+ *escreva aqui suas observações sobre o estudo comparativo*
  
 
 

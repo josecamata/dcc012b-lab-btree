@@ -8,6 +8,7 @@
 template<typename T> class BTree;
 
 // TODO: Implementar a  classe BTreeNode
+//       Use friend 
 template<typename T>
 class BTreeNode {
 

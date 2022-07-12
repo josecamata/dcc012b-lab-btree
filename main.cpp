@@ -26,8 +26,9 @@ int main(int argc, char* argv[]) {
 
     int ordem        = 2;
     int num_insercao = 5;
+    char c; 
 
-    while(c = getopt(argc, argv, "o:n:")) {
+    while((c = getopt(argc, argv, "o:n:")) != -1) {
         switch(c) {
             case 'o':
                 ordem = atoi(optarg);
@@ -41,10 +42,10 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    BTree<int> btree(order);
-    std::chrono::duration<double> elapsed_seconds_insert = 0;
-    std::chrono::duration<double> elapsed_seconds_remove = 0;
-    std::chrono::duration<double> elapsed_seconds_search = 0;
+    BTree<int> btree(ordem);
+    double elapsed_seconds_insert = 0;
+    double elapsed_seconds_remove = 0;
+    double elapsed_seconds_search = 0;
     
     /* Todo: descomente para testar a inserção de elementos 
     cout << "Inserting keys..." << endl;
@@ -52,11 +53,13 @@ int main(int argc, char* argv[]) {
         auto start = Clock::now();
         btree.insert(i);
         auto end = Clock::now();
-        elapsed_seconds_insert += end - start;
+        std::chrono::duration<double> elapsed_seconds = end - start;
+        elapsed_seconds_insert += elapsed_seconds.count();
     }
     cout << "Printing tree..." << endl;
     btree.print();
     */
+    
 
     /* TODO: descomente para testar a remoção de elementos 
     cout << "Removing keys..." << endl;
@@ -68,7 +71,8 @@ int main(int argc, char* argv[]) {
         auto start = Clock::now();
         btree.remove(key);
         auto end = Clock::now();
-        elapsed_seconds_remove += end - start;
+        std::chrono::duration<double> elapsed_seconds = end - start;
+        elapsed_seconds_remove +=elapsed_seconds.count();
     }
     */
 
@@ -81,15 +85,16 @@ int main(int argc, char* argv[]) {
         auto start = Clock::now();
         btree.remove(key);
         auto end = Clock::now();
-        elapsed_seconds_remove += end - start;
+        std::chrono::duration<double> elapsed_seconds = end - start;
+        elapsed_seconds_remove += elapsed_seconds.count();
     }
     */
 
     cout << "B-Tree order: " << ordem << endl;
     cout << "B-Tree size: "  << num_insercao << endl;
-    cout << "Insertion CPU Time: " << elapsed_seconds_insert.count() << " seconds" << endl;
-    cout << "Removal CPU Time: " << elapsed_seconds_remove.count() << " seconds" << endl;
-    cout << "Search CPU Time: " << elapsed_seconds_search.count() << " seconds" << endl;
+    cout << "Insertion CPU Time: " << elapsed_seconds_insert << " seconds" << endl;
+    cout << "Removal CPU Time: " << elapsed_seconds_remove << " seconds" << endl;
+    cout << "Search CPU Time: " << elapsed_seconds_search << " seconds" << endl;
 
     return 0;
 }
